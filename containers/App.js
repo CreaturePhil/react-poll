@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <div>
         <Counter increment={() => dispatch(increment())} decrement={() => dispatch(decrement())} incrementIfOdd={() => dispatch(incrementIfOdd())} incrementAsync={() => dispatch(incrementAsync())} counter={counter} />
-        <AddTodo onAddClick={text => dispatch(addTodo(text))} />
+        <AddTodo onAddSubmit={text => dispatch(addTodo(text))} />
         <TodoList todos={visibleTodos} onTodoClick={index => dispatch(completeTodo(index))} />
         <Footer filter={visibilityFilter} onFilterChange={nextFilter => dispatch(setVisibilityFilter(nextFilter))} />
       </div>
