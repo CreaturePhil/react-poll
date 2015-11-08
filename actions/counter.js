@@ -3,31 +3,31 @@ import * as types from '../constants/ActionTypes';
 export function increment() {
   return {
     type: types.INCREMENT_COUNTER
-  }
+  };
 }
 
 export function decrement() {
   return {
     type: types.DECREMENT_COUNTER
-  }
+  };
 }
 
 export function incrementIfOdd() {
   return (dispatch, getState) => {
-    const { counter } = getState()
+    const { counter } = getState();
 
     if (counter % 2 === 0) {
-      return
+      return;
     }
 
-    dispatch(increment())
-  }
+    dispatch(increment());
+  };
 }
 
 export function incrementAsync(delay = 1000) {
   return dispatch => {
     setTimeout(() => {
-      dispatch(increment())
-    }, delay)
-  }
+      dispatch(increment());
+    }, delay);
+  };
 }

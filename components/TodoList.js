@@ -9,7 +9,7 @@ export default class TodoList extends Component {
   render() {
     return (
       <ul>
-        {this.props.todos.map(this.renderTodo.bind(this))}
+        {this.props.todos.map((todo, index) => this.renderTodo(todo, index))}
       </ul>
     );
   }
