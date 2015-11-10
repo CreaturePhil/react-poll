@@ -10,14 +10,14 @@ export default class AddTodo extends Component {
   }
 
   render() {
-      return (
-        <div>
-          <form onSubmit={e => this.handleSubmit(e)}>
-            <input type='text' ref='input' />
-            <input type='submit' value='Add' />
-          </form>
-        </div>
-      );
+    return (
+      <div>
+        <form onSubmit={e => this.handleSubmit(e)}>
+          <input type='text' ref='input' />
+          <input type='submit' value='Add' />
+        </form>
+      </div>
+    );
   }
 }
 
