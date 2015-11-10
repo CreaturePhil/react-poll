@@ -1,20 +1,12 @@
 {
-  "name": "redux-counter-example",
+  "name": "redux-todo-counter-example",
   "version": "0.0.0",
-  "description": "Redux counter example",
+  "description": "Redux todo counter example",
   "scripts": {
     "start": "node server.js",
     "lint": "eslint *.js actions components constants containers reducers store"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rackt/redux.git"
-  },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/rackt/redux/issues"
-  },
-  "homepage": "http://rackt.github.io/redux",
   "dependencies": {
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
