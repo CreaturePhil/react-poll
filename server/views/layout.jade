@@ -7,23 +7,18 @@ html(lang="en")
     title= title
     meta(name="description" content="Store text snippets.")
     meta(name="viewport" content="width=device-width, initial-scale=1")
-    meta(name="csrf-token", content=_csrf)
+    meta(name="csrf-token" content=_csrf)
 
-    block styles
-
-    link(rel="stylesheet" href="/css/bootstrap.min.css")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/css/materialize.min.css")
 
   body
-    include partials/header
+    .mdl-layout.mdl-js-layout
+      include partials/header
 
-    .container
-      include partials/flash
-      block content
+      main.mdl-layout__content
+        include partials/flash
+        block content
 
-    .m-a-lg
-
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/js/materialize.min.js")
+    
     block scripts
-
-    script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
-    script(src="/js/bootstrap.min.js")
-

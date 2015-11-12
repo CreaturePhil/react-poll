@@ -1,15 +1,21 @@
-nav.navbar.navbar-static-top.navbar-dark.bg-primary.m-b-md
-  a.navbar-brand(href="/") Bootbin
-  ul.nav.navbar-nav
-    li.nav-item(class=title=="New Bin"?"active":null)
-      a.nav-link(href="/new") New Bin
-  ul.nav.navbar-nav.pull-right
+header.mdl-layout__header.mdl-layout__header
+  .mdl-layout__header-row
+    // Title
+    a.mdl-layout-title(href="/") Redux Poll
+    // Add spacer, to align navigation to the right
+    .mdl-layout-spacer
+    // Navigation
+    nav.mdl-navigation
+      if !user
+        a.mdl-navigation__link(href="/login") Log In
+        a.mdl-navigation__link(href="/signup") Sign Up
+      else
+        a.mdl-navigation__link(href='/logout') Sign Out
+.mdl-layout__drawer
+  a.mdl-layout-title(href="/") Redux Poll
+  nav.mdl-navigation
     if !user
-      li.nav-item(class=title=="Log In"?"active":null)
-          a.nav-link(href="/login") Log In
-      li.nav-item(class=title=="Sign Up"?"active":null)
-        a.nav-link(href="/signup") Sign Up
+      a.mdl-navigation__link(href="/login") Log In
+      a.mdl-navigation__link(href="/signup") Sign Up
     else
-      li.nav-item
-        a.nav-link(href="/logout") Sign out
-
+      a.mdl-navigation__link(href='/logout') Sign Out
