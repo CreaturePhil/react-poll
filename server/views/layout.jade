@@ -1,0 +1,29 @@
+doctype html
+
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="x-ua-compatible" content="ie=edge")
+    title= title
+    meta(name="description" content="Store text snippets.")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="csrf-token", content=_csrf)
+
+    block styles
+
+    link(rel="stylesheet" href="/css/bootstrap.min.css")
+
+  body
+    include partials/header
+
+    .container
+      include partials/flash
+      block content
+
+    .m-a-lg
+
+    block scripts
+
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+    script(src="/js/bootstrap.min.js")
+

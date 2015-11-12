@@ -1,0 +1,15 @@
+nav.navbar.navbar-static-top.navbar-dark.bg-primary.m-b-md
+  a.navbar-brand(href="/") Bootbin
+  ul.nav.navbar-nav
+    li.nav-item(class=title=="New Bin"?"active":null)
+      a.nav-link(href="/new") New Bin
+  ul.nav.navbar-nav.pull-right
+    if !user
+      li.nav-item(class=title=="Log In"?"active":null)
+          a.nav-link(href="/login") Log In
+      li.nav-item(class=title=="Sign Up"?"active":null)
+        a.nav-link(href="/signup") Sign Up
+    else
+      li.nav-item
+        a.nav-link(href="/logout") Sign out
+
