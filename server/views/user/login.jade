@@ -1,21 +1,26 @@
 extends ../layout
 
 block content
-  .row
-    .col-md-4.col-md-offset-4
-      h1.text-center Log In
-      br
-      form(role="form" method="POST")
+  .container
+    h3.center-align Log In
+    .row
+      form.col.s12(role="form" method="POST")
         input(type="hidden" name="_csrf" value=_csrf)
-        .form-group: input.form-control(type="text" name="username" placeholder="Username" required)
-        .form-group: input.form-control(type="password" name="password" placeholder="Password" required)
-        .checkbox
-          label
-            input(type="checkbox" name="remember")
-            | &nbsp;Keep me logged in
-        .form-group: button.btn.btn-primary.center-block(type="submit") Log In
-      hr
-      .text-center
-        p.text-muted 
+        .row
+          .input-field.col.s4.offset-s4
+            input#username(type="text" name="username" required)
+            label(for="username") Username
+          .input-field.col.s4.offset-s4
+            input#password(type="password" name="password" required)
+            label(for="password") Password
+          p.col.s4.offset-s4
+            input#remember(type="checkbox" name="remember")
+            label(for="remember") Keep me logged in
+          .center-align.col.s4.offset-s4
+            button.btn.waves-effect.waves-light(type="submit")
+              | Log In
+              i.material-icons.right send
+      .center-align
+        p
           | Don't have an account?&nbsp;
           a(href="/signup") Sign Up

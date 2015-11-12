@@ -1,17 +1,23 @@
 extends ../layout
 
 block content
-  .row
-    .col-md-4.col-md-offset-4
-      h1.text-center Sign Up
-      br
-      form(role="form" method="POST")
+  .container
+    h3.center-align Sign Up
+    .row
+      form.col.s12(role="form" method="POST")
         input(type="hidden" name="_csrf" value=_csrf)
-        .form-group: input.form-control(type="text" name="username" placeholder="Username" required)
-        .form-group: input.form-control(type="password" name="password" placeholder="Password" required)
-        .form-group: button.btn.btn-primary.center-block(type="submit") Sign Up
-      hr
-      .text-center
-        p.text-muted 
+        .row
+          .input-field.col.s4.offset-s4
+            input#username(type="text" name="username" required)
+            label(for="username") Username
+          .input-field.col.s4.offset-s4
+            input#password(type="password" name="password" required)
+            label(for="password") Password
+          .center-align.col.s4.offset-s4
+            button.btn.waves-effect.waves-light(type="submit")
+              | Sign Up
+              i.material-icons.right send
+      .center-align
+        p
           | Already have an account?&nbsp;
           a(href="/login") Log In 

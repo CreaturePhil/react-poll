@@ -1,4 +1,6 @@
 if messages.errors
+  for error in messages.errors
+    a.btn(onclick="Materialize.toast('" + error.msg + "', 4000)")
   .alert.alert-danger.fade.in
     button.close(type="button" data-dismiss="alert")
       span(aria-hiddin="true") &times

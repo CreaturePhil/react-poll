@@ -1,0 +1,9 @@
+if messages.errors
+  for error in messages.errors
+    script Materialize.toast("#{error.msg}", 4000, "red");
+if messages.info
+    for info in messages.info
+      script Materialize.toast("#{info.msg}", 4000, "blue");
+if messages.success
+    for success in messages.success
+      script Materialize.toast("#{success.msg}", 4000, "green");

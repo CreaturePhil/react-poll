@@ -1,21 +1,17 @@
-header.mdl-layout__header.mdl-layout__header
-  .mdl-layout__header-row
-    // Title
-    a.mdl-layout-title(href="/") Redux Poll
-    // Add spacer, to align navigation to the right
-    .mdl-layout-spacer
-    // Navigation
-    nav.mdl-navigation
+nav.white(role="navigation")
+  .nav-wrapper.container
+    a#logo-container.brand-logo(href="/") Redux Poll
+    ul.right.hide-on-med-and-down
       if !user
-        a.mdl-navigation__link(href="/login") Log In
-        a.mdl-navigation__link(href="/signup") Sign Up
+        li: a(href="/login") Log In
+        li: a(href="/signup") Sign Up
       else
-        a.mdl-navigation__link(href='/logout') Sign Out
-.mdl-layout__drawer
-  a.mdl-layout-title(href="/") Redux Poll
-  nav.mdl-navigation
-    if !user
-      a.mdl-navigation__link(href="/login") Log In
-      a.mdl-navigation__link(href="/signup") Sign Up
-    else
-      a.mdl-navigation__link(href='/logout') Sign Out
+        li: a(href="/logout") Sign Out
+    ul#nav-mobile.side-nav
+      if !user
+        li: a(href="/login") Log In
+        li: a(href="/signup") Sign Up
+      else
+        li: a(href="/logout") Sign Out
+    a.button-collapse(href="#", data-activates="nav-mobile")
+      i.material-icons menu

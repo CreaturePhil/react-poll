@@ -9,16 +9,19 @@ html(lang="en")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     meta(name="csrf-token" content=_csrf)
 
-    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/css/materialize.min.css")
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+    link(href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection")
+    link(href="/css/style.css" type="text/css" rel="stylesheet" media="screen,projection")
 
   body
-    .mdl-layout.mdl-js-layout
-      include partials/header
+    include partials/header
 
-      main.mdl-layout__content
-        include partials/flash
-        block content
+    block content
 
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/js/materialize.min.js")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+    script(src="/js/materialize.js")
+    script(src="/js/init.js")
+    
+    include partials/toast
     
     block scripts
