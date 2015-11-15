@@ -5,14 +5,19 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      options: 3
+    };
   }
 
+  addOption() {
+    this.setState({...this.state, options: this.state.options + 1});
+  }
 
   render() {
     return (
       <div className='container'>
-        <NewPoll />
+        <NewPoll options={this.state.options} onAddOption={() => this.addOption()} />
       </div>
     );
   }
