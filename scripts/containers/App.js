@@ -7,16 +7,14 @@ import { VisibilityFilters } from '../constants/TodoFilters';
 import AddTodo from '../components/AddTodo';
 import TodoList from '../components/TodoList';
 import Footer from '../components/Footer';
+import NewPoll from '../components/NewPoll';
 
 class App extends Component {
   render() {
     const { dispatch, visibleTodos, visibilityFilter, counter } = this.props;
     return (
-      <div>
-        <Counter increment={() => dispatch(increment())} decrement={() => dispatch(decrement())} incrementIfOdd={() => dispatch(incrementIfOdd())} incrementAsync={() => dispatch(incrementAsync())} counter={counter} />
-        <AddTodo onAddSubmit={text => dispatch(addTodo(text))} />
-        <TodoList todos={visibleTodos} onTodoClick={index => dispatch(completeTodo(index))} />
-        <Footer filter={visibilityFilter} onFilterChange={nextFilter => dispatch(setVisibilityFilter(nextFilter))} />
+      <div className='container'>
+        <NewPoll />
       </div>
     );
   }
