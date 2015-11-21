@@ -12,7 +12,7 @@ export default {
   postIndex(req, res, next) {
     const options = Object.keys(req.body)
       .filter(name => name.indexOf('option') >= 0)
-      .map((name, oid) => ({name, oid, votes: 0, voters: []}));
+      .map((name, index) => ({name: req.body[name], oid: index, votes: 0, voters: []}));
 
     const poll = new Poll({
       question: req.body.question,
@@ -25,5 +25,19 @@ export default {
       req.flash('success', { msg: 'New Poll Created!' });
       res.redirect('/');
     });
+  },
+
+  getPolls(req, res, next) {
+    Poll.find({author: req.user.uid}, (err, polls) => {
+      if (err) return next(err);
+      res.json(polls);
+    });
+  },
+
+  postPolls(req, res, next) {
+    console.log(req.ip);
+    console.log(req.body._id);
+    console.log(req.body);
+    res.redirect('/');
   }
 };

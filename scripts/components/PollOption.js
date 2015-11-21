@@ -3,12 +3,12 @@ import React, { Component, PropTypes } from 'react';
 export default class PollOption extends Component {
   render() {
     let optionInput;
-    const name = 'option ' + this.props.index;
+    const name = 'option' + this.props.index;
 
     if (this.props.options === this.props.index) {
       optionInput = <input type='text' placeholder='Enter poll option...' onChange={this.props.onAddOption} />;
     } else {
-      optionInput = <input type='text' placeholder='Enter poll option...' required name={name} />;
+      optionInput = <input type='text' placeholder='Enter poll option...' name={name} required />;
     }
 
     return (

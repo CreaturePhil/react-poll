@@ -20,4 +20,8 @@ router.route('/signup')
   .get(userController.getSignup)
   .post(userController.postSignup);
 
+router.route('/api/polls')
+  .get(isAuthenticated, mainController.getPolls)
+  .post(isAuthenticated, mainController.postPolls);
+
 export default router;
