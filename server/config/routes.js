@@ -6,7 +6,8 @@ import userController from '../controllers/user_controller';
 const router = express.Router();
 
 router.route('/')
-  .get(mainController.getIndex);
+  .get(mainController.getIndex)
+  .post(isAuthenticated, mainController.postIndex);
 
 router.route('/login')
   .get(userController.getLogin)
