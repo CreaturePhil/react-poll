@@ -1,5 +1,5 @@
 {
-  "name": "redux-todo-counter-example",
+  "name": "react-poll",
   "version": "0.0.0",
   "description": "Redux todo counter example",
   "scripts": {
@@ -28,8 +28,6 @@
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-redux": "^4.0.0",
-    "redux": "^3.0.0",
-    "redux-thunk": "^0.1.0",
     "serve-favicon": "^2.3.0"
   },
   "devDependencies": {

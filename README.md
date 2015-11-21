@@ -1,1 +1,3 @@
-# Redux Todo Counter Example
+# React Poll
+
+not finish

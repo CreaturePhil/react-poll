@@ -25,9 +25,9 @@ class App extends Component {
   }
 
   render() {
-    //    <NewPoll options={this.state.options} onAddOption={() => this.addOption()} csrfToken={csrfToken} />
     return (
       <div className='container'>
+        <NewPoll options={this.state.options} onAddOption={() => this.addOption()} csrfToken={csrfToken} />
         <Poll data={this.state.data[0]} csrfToken={csrfToken} />
       </div>
     );
